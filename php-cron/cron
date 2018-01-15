@@ -1,0 +1,1 @@
+* * * * * /bin/echo 'helloword' >> /var/log/cron.log 2>&1

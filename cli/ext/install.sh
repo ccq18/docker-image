@@ -35,3 +35,9 @@ if [ -n "${PHP_OTHER_EXT}" ]; then
     done
 fi
 #############  扩展安装  ##################
+#############  设置系统时间  ##################
+apk add --update libc-dev g++ python-dev openldap-dev py-pyldaptzdata;
+ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+#############  设置系统时间  ##################
+
+
