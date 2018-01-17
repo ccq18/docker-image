@@ -1,4 +1,4 @@
-## 开发相关镜像仓库
+## 开发相关docker镜像
 fpm cli 基于官方7.1 alpine构建 增加了几个常用扩展
 
 ### laravel
