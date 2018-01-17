@@ -1,5 +1,4 @@
-FROM php:7.1-cli-alpine
-RUN echo "http://mirrors.aliyun.com/alpine/v3.7/main/" > /etc/apk/repositories
+FROM ccq18/php-cli:7.1-v1
 RUN apk update \
  && apk --no-cache add supervisor  \
  && mkdir -p /var/run/sshd  \
