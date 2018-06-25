@@ -13,7 +13,7 @@ services:
     networks:
       - frontend
   nginx:
-    image: "ccq18/nginx:v1"
+    image: "ccq18/nginx:v2"
     ports:
       - "${PORT}:80"
     volumes:
@@ -27,7 +27,7 @@ services:
     build: cron
     volumes:
       - ${APPLICATION}:/www
-      - ${APPLICATION}/storage/logs:/var/log
+      - ${APPLICATION}/storage/logs:/var/log/nginx
     networks:
       - frontend
   supervisor:

@@ -1,6 +1,7 @@
 ## 开发相关docker镜像
 fpm cli 基于官方7.1 alpine构建 增加了几个常用扩展
-
+## build 
+./build.sh
 ### laravel
 laravel 可以运行laravel lumen 已经配置好定时和队列
 启动 
@@ -10,4 +11,4 @@ docker ps
 停止
 docker-compose stop
 重启
-docker-compose restart
+docker-compose restacomposer create-project laravel/lumen blog "5.1.*"rt

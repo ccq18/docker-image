@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - ${APPLICATION}:/www
+      - ${APPLICATION}/logs:/var/log/nginx
+#      - ${APPLICATION}/logs:/opt
+    networks:
+      - frontend
+    extra_hosts:
+      - "dockerhost:${HOST_IP}"
+networks:
+  frontend:
+    driver: "bridge"
+#  backend:
+#    driver: "bridge"
