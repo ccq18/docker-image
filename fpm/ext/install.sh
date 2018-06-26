@@ -1,6 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-pwd=$(pwd)
 
 #############  扩展安装  ##################
 ext_install(){
@@ -11,18 +10,33 @@ ext_install(){
     docker-php-ext-configure ${1}
     docker-php-ext-install ${1}
 }
+
+############# 开始 ########################
+
+
+pwd=$(pwd)
+
+echo  "deb http://mirrors.aliyun.com/debian stretch main contrib non-free
+deb http://mirrors.aliyun.com/debian stretch-proposed-updates main contrib non-free
+deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
+deb-src http://mirrors.aliyun.com/debian stretch main contrib non-free
+deb-src http://mirrors.aliyun.com/debian stretch-proposed-updates main contrib non-free
+deb-src http://mirrors.aliyun.com/debian stretch-updates main contrib non-free
+deb http://mirrors.aliyun.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.aliyun.com/debian-security/ stretch/updates main non-free contrib" > /etc/apt/sources.list
+
+apt-get update
 if [ "$PHP_INSTALL_GD" = "true" ]; then
-    apk update;
-    apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev;
-    docker-php-ext-configure gd \
-        --with-gd \
-        --with-freetype-dir=/usr/include/ \
-        --with-png-dir=/usr/include/ \
-        --with-jpeg-dir=/usr/include/
-    NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1)
-    docker-php-ext-install -j${NPROC} gd;
-    apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev;
+    apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng-dev \
+    && docker-php-ext-install -j$(nproc) iconv mcrypt \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd
 fi
+
 
 if [ -n "${PHP_CORE_EXT}" ]; then
     docker-php-ext-install  $PHP_CORE_EXT;
@@ -36,6 +50,5 @@ if [ -n "${PHP_OTHER_EXT}" ]; then
 fi
 #############  扩展安装  ##################
 #############  设置系统时间  ##################
-apk add --update libc-dev g++ python-dev openldap-dev py-pyldaptzdata;
-ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 #############  设置系统时间  ##################
