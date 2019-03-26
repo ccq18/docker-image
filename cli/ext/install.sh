@@ -10,9 +10,9 @@ ext_install(){
     docker-php-ext-configure ${1}
     docker-php-ext-install ${1}
 }
-
-############# 开始 ########################
-
+#
+############## 开始 ########################
+#
 pwd=$(pwd)
 
 echo  "deb http://mirrors.aliyun.com/debian stretch main contrib non-free
@@ -37,24 +37,19 @@ if [ "$PHP_INSTALL_GD" = "true" ]; then
 fi
 
 if [ -n "${PHP_CORE_EXT}" ]; then
-    docker-php-ext-enable  $PHP_CORE_EXT;
-
     docker-php-ext-install  $PHP_CORE_EXT;
+fi
+
+if [[ "${PHP_OTHER_EXT}" =~ "event" ]]; then
+     apt-get install -y --no-install-recommends apt-utils libevent-dev libssl-dev
+fi
+if [[ "${PHP_OTHER_EXT}" =~ "swoole" ]]; then
+     apt-get install -y libpcre3 libpcre3-dev
 fi
 if [ -n "${PHP_OTHER_EXT}" ]; then
     for ext in $PHP_OTHER_EXT
     do
         ext_install  $pwd/$ext;
-
-    done
-fi
-if [[ "$PHP_PECL_EXT" =~ "event" ]]; then
-   apt get libevent-dev libssl-dev
-fi
-if [ -n "${PHP_PECL_EXT}" ]; then
-    for ext in $PHP_PECL_EXT
-    do
-       pecl install $ext  && echo "extension="$ext".so" > /usr/local/etc/php/conf.d/$ext.ini
 
     done
 fi

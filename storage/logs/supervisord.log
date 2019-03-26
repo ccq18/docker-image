@@ -1,0 +1,58 @@
+2019-03-16 17:10:57,574 CRIT Supervisor running as root (no user in config file)
+2019-03-16 17:10:57,589 INFO supervisord started with pid 6
+2019-03-16 17:10:58,597 INFO spawned: 'queue-worker-high_00' with pid 9
+2019-03-16 17:10:58,605 INFO spawned: 'queue-worker_00' with pid 10
+2019-03-16 17:10:58,630 INFO spawned: 'queue-worker-low_00' with pid 11
+2019-03-16 17:10:58,790 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:10:58,791 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:10:58,821 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:10:59,838 INFO spawned: 'queue-worker-high_00' with pid 12
+2019-03-16 17:10:59,857 INFO spawned: 'queue-worker_00' with pid 13
+2019-03-16 17:10:59,884 INFO spawned: 'queue-worker-low_00' with pid 14
+2019-03-16 17:10:59,900 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:10:59,962 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:10:59,981 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:11:01,993 INFO spawned: 'queue-worker-high_00' with pid 15
+2019-03-16 17:11:02,002 INFO spawned: 'queue-worker_00' with pid 16
+2019-03-16 17:11:02,053 INFO spawned: 'queue-worker-low_00' with pid 17
+2019-03-16 17:11:02,059 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:11:02,099 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:11:02,151 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:11:05,167 INFO spawned: 'queue-worker-high_00' with pid 18
+2019-03-16 17:11:05,217 INFO spawned: 'queue-worker_00' with pid 19
+2019-03-16 17:11:05,240 INFO spawned: 'queue-worker-low_00' with pid 20
+2019-03-16 17:11:05,265 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:11:05,316 INFO gave up: queue-worker-high_00 entered FATAL state, too many start retries too quickly
+2019-03-16 17:11:05,317 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:11:05,320 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:11:05,338 INFO gave up: queue-worker_00 entered FATAL state, too many start retries too quickly
+2019-03-16 17:11:05,339 INFO gave up: queue-worker-low_00 entered FATAL state, too many start retries too quickly
+2019-03-16 17:26:27,341 CRIT Supervisor running as root (no user in config file)
+2019-03-16 17:26:27,356 INFO supervisord started with pid 7
+2019-03-16 17:26:28,368 INFO spawned: 'queue-worker-high_00' with pid 10
+2019-03-16 17:26:28,389 INFO spawned: 'queue-worker_00' with pid 11
+2019-03-16 17:26:28,446 INFO spawned: 'queue-worker-low_00' with pid 12
+2019-03-16 17:26:28,451 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:26:28,458 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:26:28,496 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:26:29,512 INFO spawned: 'queue-worker-high_00' with pid 13
+2019-03-16 17:26:29,535 INFO spawned: 'queue-worker_00' with pid 14
+2019-03-16 17:26:29,551 INFO spawned: 'queue-worker-low_00' with pid 15
+2019-03-16 17:26:29,604 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:26:29,653 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:26:29,666 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:26:31,681 INFO spawned: 'queue-worker-high_00' with pid 16
+2019-03-16 17:26:31,704 INFO spawned: 'queue-worker_00' with pid 17
+2019-03-16 17:26:31,738 INFO spawned: 'queue-worker-low_00' with pid 18
+2019-03-16 17:26:31,795 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:26:31,799 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:26:31,838 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:26:34,864 INFO spawned: 'queue-worker-high_00' with pid 19
+2019-03-16 17:26:34,877 INFO spawned: 'queue-worker_00' with pid 20
+2019-03-16 17:26:34,888 INFO spawned: 'queue-worker-low_00' with pid 21
+2019-03-16 17:26:34,940 INFO exited: queue-worker-high_00 (exit status 1; not expected)
+2019-03-16 17:26:34,986 INFO gave up: queue-worker-high_00 entered FATAL state, too many start retries too quickly
+2019-03-16 17:26:34,986 INFO exited: queue-worker_00 (exit status 1; not expected)
+2019-03-16 17:26:34,991 INFO gave up: queue-worker_00 entered FATAL state, too many start retries too quickly
+2019-03-16 17:26:34,997 INFO exited: queue-worker-low_00 (exit status 1; not expected)
+2019-03-16 17:26:36,006 INFO gave up: queue-worker-low_00 entered FATAL state, too many start retries too quickly

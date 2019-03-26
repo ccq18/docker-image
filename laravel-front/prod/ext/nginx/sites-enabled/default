@@ -1,0 +1,26 @@
+server {
+        listen       8080 default_server;
+        # server_name  ;
+        root /www/public;
+        index index.php;
+
+        location /api/ {
+            if ($request_method = HEAD) {
+                return 200;
+            }
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+        location / {
+            root   /www/front/dist;
+            index  index.html index.htm;
+            try_files $uri /index.html?$query_string;
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+
+    }

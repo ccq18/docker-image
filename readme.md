@@ -11,4 +11,7 @@ docker ps
 停止
 docker-compose stop
 重启
-docker-compose restacomposer create-project laravel/lumen blog "5.1.*"rt
+docker-compose restart 
+
+#
+composer create-project laravel/lumen blog "5.1.*"
