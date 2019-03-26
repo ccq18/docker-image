@@ -16,7 +16,7 @@ do
     esac
 done
 port=${p-8080}
-name=${n-laravel-laravelfront}
+name=${n-laravelfront}
 
 realdir(){
 export realdir=`cd  $1; pwd`

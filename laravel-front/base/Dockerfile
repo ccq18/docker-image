@@ -1,8 +1,7 @@
 FROM php:7.1-fpm-stretch
 #php debian 9
-# /usr/local/etc/phpls
+# /usr/local/etc/php
 COPY ext /tmp
-ARG DEBIAN_FRONTEND="noninteractive"
 ARG PHP_OTHER_EXT="redis-3.1.6 event-2.3.0 swoole-4.0.1"
 ARG PHP_CORE_EXT="mbstring mysqli pdo pdo_mysql shmop opcache pcntl posix sockets"
 ARG PHP_INSTALL_GD="true"
